@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>搭建博客 - Peace All Year Round</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="初成长心得
+写博客的第一站，试一试、学一学.
+学习Vu...">
+  <meta name="author" content="Fairy-lx">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: false,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: 'https://api.vvhan.com/api/bing?type=sj#https://source.unsplash.com/random/1920x1080'
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://hitokoto.cn#https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: true,
+        path: 'search.xml'
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+        <i class="iconfont iconsearch j-navbar-search"></i>
+      
+    </div>
+    <div class="center">搭建博客</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://pic.izhaoo.com/20200421200902.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">搭建博客</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>January 18, 2022</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>3535</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <p>初成长心得</p>
+<p>写博客的第一站，试一试、学一学.</p>
+<h1 id="学习Vue的第一天"><a href="#学习Vue的第一天" class="headerlink" title="学习Vue的第一天"></a>学习Vue的第一天</h1><p>此时已经对HTML+CSS+JavaScript有了一定的了解，接下来打算学习Vue框架，在开始学习之前看了很多知乎对Vue的视频、书籍、学习方法的推荐，发现大多数都推荐直接看官方文档：</p>
+<ol>
+<li><p><strong>官方文档</strong>：<a target="_blank" rel="noopener" href="https://cn.vuejs.org/">Vue.js官网</a>；</p>
+</li>
+<li><p><strong>书籍推荐</strong> ：《Vue.js权威指南》；</p>
+</li>
+<li><p><strong>视频推荐</strong> ：<a target="_blank" rel="noopener" href="https://www.imooc.com/new/">慕课网</a>(黄奕老师的课有很多人推荐)</p>
+<p><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20201207140137827.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xMbGFveWV6aQ==,size_16,color_FFFFFF,t_70#pic_center" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">官网截图</span></p>
+</li>
+</ol>
+<h3 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h3><p>在正式学习Vue之前，可以先搞懂MVVM,在搞懂MVVM之前我们还需要理解MVC(有一点绕哈，没关系慢慢来看)</p>
+<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><ol>
+<li><p>MVC是Model-View- Controller的简写。即模型-视图-控制器。<br><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20201207151907513.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xMbGFveWV6aQ==,size_16,color_FFFFFF,t_70#pic_center" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span></p>
+</li>
+<li><p>Model：我简单的理解为业务数据信息的表示（就如Java中的实体类）（ps:个人的理解）</p>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// 实体类</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;<br>   <span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> <span class="hljs-function"><span class="hljs-title">getName</span>(<span class="hljs-params"></span>)</span> &#123;<br>      <span class="hljs-keyword">return</span> name;<br>   &#125;<br>   <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">setName</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> name</span>)</span> &#123;<br>      <span class="hljs-built_in">this</span>.name = name;<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>View：是数据的显示层（就如Java的一个用于输出的类）</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">//显示用于数据的类</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StudentView</span> &#123;</span><br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printDetails</span><span class="hljs-params">(<span class="hljs-keyword">String</span> studentName)</span></span>&#123;<br>      System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;Student: &quot;</span>);<br>      System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;Name: &quot;</span> + studentName);<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>Controller：控制层，我理解为是数据模型与数据显示之间的桥梁，有了这座桥我们就可以在更改某一方面而不去影响另外一个方面了</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs typescript">   <span class="hljs-comment">//建立Model与View的联系</span><br>   <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StudentController</span> </span>&#123;<br>   <span class="hljs-keyword">private</span> Student model;<br>   <span class="hljs-keyword">private</span> StudentView view;<br> <br>   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-title">StudentController</span>(<span class="hljs-params">Student model, StudentView view</span>)</span>&#123;<br>      <span class="hljs-built_in">this</span>.model = model;<br>      <span class="hljs-built_in">this</span>.view = view;<br>   &#125;<br> <br>   <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">setStudentName</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> name</span>)</span>&#123;<br>      model.setName(name);    <br>   &#125;<br> <br>   <span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> <span class="hljs-function"><span class="hljs-title">getStudentName</span>(<span class="hljs-params"></span>)</span>&#123;<br>      <span class="hljs-keyword">return</span> model.getName();    <br>   &#125;<br> <br>   <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">updateView</span>(<span class="hljs-params"></span>)</span>&#123;           <br>      view.printDetails(model.getName());<br>   &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-comment">//测试类</span><br>  public <span class="hljs-keyword">class</span> MVCDemo &#123;<br>   public static void main(String<span class="hljs-literal">[]</span> args) &#123;<br> <br>      <span class="hljs-comment">//从数据库获取学生记录</span><br>      Student model  = get<span class="hljs-constructor">Database()</span>;<br> <br>      <span class="hljs-comment">//创建一个视图：把学生详细信息输出到控制台</span><br>      StudentView view = <span class="hljs-keyword">new</span> <span class="hljs-constructor">StudentView()</span>;<br> <br>      StudentController controller = <span class="hljs-keyword">new</span> <span class="hljs-constructor">StudentController(<span class="hljs-params">model</span>, <span class="hljs-params">view</span>)</span>;<br> 	 <span class="hljs-comment">//调用controller的方法来间接调用view的printDetails方法</span><br>      controller.update<span class="hljs-constructor">View()</span>;<br> <br>      <span class="hljs-comment">//更新模型数据</span><br>      <span class="hljs-comment">//间接调用model的setName方法</span><br>      controller.set<span class="hljs-constructor">StudentName(<span class="hljs-string">&quot;John&quot;</span>)</span>;<br> <br>      controller.update<span class="hljs-constructor">View()</span>;<br>   &#125;<br>   <span class="hljs-comment">//从数据库获取学生记录</span><br>   <span class="hljs-keyword">private</span> static Student get<span class="hljs-constructor">Database()</span>&#123;<br>      Student student = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Student()</span>;<br>      student.set<span class="hljs-constructor">Name(<span class="hljs-string">&quot;Robert&quot;</span>)</span>;<br>      student.set<span class="hljs-constructor">RollNo(<span class="hljs-string">&quot;10&quot;</span>)</span>;<br>      return student;<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>使用MVC的优势（简单总结，ps:理解比较浅薄）<br><strong>优点</strong>：采用分层方式，使得业务结构清晰，耦合性低，大型项目代码的复用性得到极大的提高，开发人员分工明确，提高了开发的效率，维护方便，降低了维护成本。</p>
+</li>
+</ol>
+<p><strong>缺点</strong>：简单的小型项目，使用MVC设计反而会降低开发效率，层和层虽然相互分离，但是之间关联性太强，没有做到独立的重用。</p>
+<h3 id="MMVM（进入正题）"><a href="#MMVM（进入正题）" class="headerlink" title="MMVM（进入正题）"></a>MMVM（进入正题）</h3><ol>
+<li><p>MVVM（Model-View-ViewModel）即模型-视图-视图模型<br>（这部分来自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wzfwaf/p/10553160.html">隔壁老主</a>）<br><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20201207152552181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xMbGFveWV6aQ==,size_16,color_FFFFFF,t_70#pic_center" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span></p>
+<p>【模型】指的是后端传递的数据。<br>【视图】指的是所看到的页面。<br>【视图模型】mvvm模式的核心，它是连接view和model的桥梁。<br><strong>它有两个方向</strong>：<br>一是将【模型】转化成【视图】，即将后端传递的数据转化成所看到的页面。<br>实现的方式是：数据绑定。<br>二是将【视图】转化成【模型】，即将所看到的页面转化成后端的数据。<br>实现的方式是：DOM 事件监听。<br>这两个方向都实现的，我们称之为数据的双向绑定。<br>总结：在MVVM的框架下视图和模型是<strong>不能直接通信</strong>的。它们通过ViewModel来通信，ViewModel通常要实现一个<strong>observer观察者</strong>，当数据发生变化，ViewModel能够监听到数据的这种变化，然后通知到对应的视图做自动更新，而当用户操作视图，ViewModel也能监听到视图的变化，然后通知数据做改动，这实际上就实现了数据的<strong>双向绑定</strong>。并且MVVM中的View 和 ViewModel可以互相通信。</p>
+<h2 id="Vue是一种渐进式的JavaScript框架"><a href="#Vue是一种渐进式的JavaScript框架" class="headerlink" title="Vue是一种渐进式的JavaScript框架"></a>Vue是一种渐进式的JavaScript框架</h2><p>这是官网对Vue的介绍</p>
+<blockquote>
+<p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><p>框架：具有约束的项目结构或者写法的功能，能够更好的管理项目，让程序员专注于业务逻辑，是项目的维护拓展。</p>
+</li>
+<li><p>渐进式：可以在项目的某一个部分使用vue，也可以整个项目都使用vue的写法。它并不强制要求全部使用它的规则进行开发，所以它的主张不强。</p>
+</li>
+<li><p>自底向上：（还没有理解到位，先留下不写）</p>
+<h2 id="Vue初始化"><a href="#Vue初始化" class="headerlink" title="Vue初始化"></a>Vue初始化</h2></li>
+<li><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><blockquote>
+<p>（官网上有三种方式，作为新手还是安分使用官方推荐的）<br><strong>下载地址：</strong><a target="_blank" rel="noopener" href="https://cn.vuejs.org/js/vue.js">开发版</a> <a target="_blank" rel="noopener" href="https://cn.vuejs.org/js/vue.min.js">生产版</a><br>开发版本：包含有完整的警告和调试模式 相对生产版本大一些（大小：335kb）<br>（在开发版本中引入成功后的提示，在开发过程发生错误也会有提示）<br><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20201207161343297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xMbGFveWV6aQ==,size_16,color_FFFFFF,t_70#pic_center" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span>生产版本：删除了警告（大小：95kb）<br>（引入成功后没有相应的提示，在开发过程中出错也没有相应的错误提示）<br><img    class="lazyload" data-original="https://img-blog.csdnimg.cn/2020120716160681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xMbGFveWV6aQ==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span></p>
+</blockquote>
+<h4 id="模板渲染"><a href="#模板渲染" class="headerlink" title="模板渲染"></a>模板渲染</h4></li>
+<li><p>模板引擎</p>
+<blockquote>
+<p><strong>百度百科解释：</strong><br>模板引擎（这里特指用于Web开发的模板引擎）是为了使用户界面与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的HTML文档。<br>模板引擎不属于特定技术领域，它是跨领域跨平台的概念。在Asp下有模板引擎，在PHP下也有模板引擎，在C#下也有，甚至JavaScript、WinForm开发都会用到模板引擎技术。<br><strong>我的理解：</strong><br>(借鉴了很多大佬的思想)<img    class="lazyload" data-original="https://img-blog.csdnimg.cn/20201207232149762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xMbGFveWV6aQ==,size_16,color_FFFFFF,t_70" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">在这里插入图片描述</span></p>
+</blockquote>
+</li>
+</ul>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>Fairy-lx</li>
+    <li><strong>本文链接：</strong><a href="https://fairy-lx.github.io/2022/01/18/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html" title="https:&#x2F;&#x2F;fairy-lx.github.io&#x2F;2022&#x2F;01&#x2F;18&#x2F;%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2&#x2F;index.html">https:&#x2F;&#x2F;fairy-lx.github.io&#x2F;2022&#x2F;01&#x2F;18&#x2F;%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%AC%E8%BF%90%E4%B9%8B%E5%89%8D%E7%9A%84%E5%8D%9A%E5%AE%A2/" rel="tag">搬运之前的博客</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2022/01/18/hello-world/">Hello World<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0Vue%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9"><span class="toc-text">学习Vue的第一天</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVVM"><span class="toc-text">MVVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC"><span class="toc-text">MVC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MMVM%EF%BC%88%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98%EF%BC%89"><span class="toc-text">MMVM（进入正题）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%98%AF%E4%B8%80%E7%A7%8D%E6%B8%90%E8%BF%9B%E5%BC%8F%E7%9A%84JavaScript%E6%A1%86%E6%9E%B6"><span class="toc-text">Vue是一种渐进式的JavaScript框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">Vue初始化</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+    <div class="search">
+  <div class="search-container">
+    <div class="search-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <div class="search-input-wrapper">
+      <i class="search-input-icon iconfont iconsearch"></i>
+      <input class="search-input" type="search" id="search-input" placeholder="Search..." autofocus autocomplete="off"
+        autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="search-output" id="search-output"></div>
+  </div>
+</div>
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
