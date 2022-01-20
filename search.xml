@@ -1,6 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo-theme-zhaoo</title>
+    <url>/2020/01/30/zhaoo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>一款简约的 <code>Hexo</code> 主题。</p>
+<span id="more"></span>
+
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p><a href="https://github.com/izhaoo/hexo-theme-zhaoo">GitHub</a></p>
+<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><ul>
+<li><a href="https://www.izhaoo.com/">zhaoo’s Blog</a></li>
+<li><a href="https://codegorgeous.github.io/">CodeGorgeous</a></li>
+<li><a href="http://www.rt95.ink/">你好我是王日天@</a></li>
+<li><a href="https://www.bianxr.com/">卞卞不是便便</a></li>
+</ul>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> 简约 &amp; 响应式 &amp; 动效</li>
+<li><input checked="" disabled="" type="checkbox"> <code>highlight</code> 代码高亮</li>
+<li><input checked="" disabled="" type="checkbox"> <code>Gitalk</code> 评论</li>
+<li><input checked="" disabled="" type="checkbox"> <code>FancyBox</code> 图片灯箱</li>
+<li><input checked="" disabled="" type="checkbox"> <code>Pjax</code> 无刷新加载</li>
+<li><input checked="" disabled="" type="checkbox"> <code>lazyload</code> 图片懒加载</li>
+<li><input checked="" disabled="" type="checkbox"> <code>LeanCloud</code> 统计访问量</li>
+<li><input checked="" disabled="" type="checkbox"> <code>支付宝、微信</code> 打赏</li>
+<li><input checked="" disabled="" type="checkbox"> 相册页面，图片支持瀑布流加载（<code>justifiedGallery</code>）</li>
+<li><input checked="" disabled="" type="checkbox"> 格言，可配合插件 <code>hexo-plug-motto</code> 实现动态格言</li>
+<li><input checked="" disabled="" type="checkbox"> 定制 <code>主题风格</code>、<code>CDN</code>、<code>埋点脚本</code>、<code>社交链接</code>、<code>版权说明</code> 等</li>
+</ul>
+<h1 id="文章演示"><a href="#文章演示" class="headerlink" title="文章演示"></a>文章演示</h1><h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><p>一个<code>幽灵</code>，共产主义的<code>幽灵</code>，在欧洲游荡。为了对这个<code>幽灵</code>进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。</p>
+<p>使用 <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>ESC</kbd> 打开任务管理器</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p><img  src="/images/theme/post-image.jpg"   title="图片测试"><span class="image-caption">图片测试</span></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-meta">&#x27;use strict&#x27;</span>;<br><span class="hljs-keyword">var</span> pagination = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;hexo-pagination&#x27;</span>);<br><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">locals</span>)</span>&#123;<br>  <span class="hljs-keyword">var</span> config = <span class="hljs-built_in">this</span>.config;<br>  <span class="hljs-keyword">var</span> posts = locals.posts;<br>    posts.data = posts.data.sort(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>      <span class="hljs-keyword">if</span>(a.top &amp;&amp; b.top) &#123;<br>        <span class="hljs-keyword">if</span>(a.top == b.top) <span class="hljs-keyword">return</span> b.date - a.date;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.top - a.top;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a.top &amp;&amp; !b.top) &#123;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!a.top &amp;&amp; b.top) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.date - a.date;<br>    &#125;);<br>  <span class="hljs-keyword">var</span> paginationDir = config.pagination_dir || <span class="hljs-string">&#x27;page&#x27;</span>;<br>  <span class="hljs-keyword">return</span> pagination(<span class="hljs-string">&#x27;&#x27;</span>, posts, &#123;<br>    <span class="hljs-attr">perPage</span>: config.index_generator.per_page,<br>    <span class="hljs-attr">layout</span>: [<span class="hljs-string">&#x27;index&#x27;</span>, <span class="hljs-string">&#x27;archive&#x27;</span>],<br>    <span class="hljs-attr">format</span>: paginationDir + <span class="hljs-string">&#x27;/%d/&#x27;</span>,<br>    <span class="hljs-attr">data</span>: &#123;<br>      <span class="hljs-attr">__index</span>: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;);<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="/images/theme/post-image.jpg">普通链接</a></p>
+<p><a href="https://www.izhaoo.com/">https://www.izhaoo.com</a></p>
+<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><h5 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h5><p><em>斜体文本</em></p>
+<p><strong>粗体文本</strong></p>
+<p><em><strong>粗斜体文本</strong></em></p>
+<h5 id="线条"><a href="#线条" class="headerlink" title="线条"></a>线条</h5><hr>
+<p><del>删除线</del></p>
+<p><u>下划线</u></p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h5 id="嵌套列表"><a href="#嵌套列表" class="headerlink" title="嵌套列表"></a>嵌套列表</h5><ol>
+<li>第一项：<ul>
+<li>第一项嵌套的第一个元素</li>
+<li>第一项嵌套的第二个元素</li>
+</ul>
+</li>
+<li>第二项：<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
+</ul>
+</li>
+</ol>
+<h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><blockquote>
+<p>区块引用</p>
+</blockquote>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+</tbody></table>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><h4 id="四级"><a href="#四级" class="headerlink" title="四级"></a>四级</h4><h5 id="五级"><a href="#五级" class="headerlink" title="五级"></a>五级</h5><h6 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h6><h1 id="开发日志"><a href="#开发日志" class="headerlink" title="开发日志"></a>开发日志</h1><h3 id="2019-12-02"><a href="#2019-12-02" class="headerlink" title="2019.12.02"></a>2019.12.02</h3><ul>
+<li>Add 创建项目</li>
+<li>Add 完成部分功能</li>
+</ul>
+<h3 id="2019-12-03"><a href="#2019-12-03" class="headerlink" title="2019.12.03"></a>2019.12.03</h3><ul>
+<li>Add 新增基础分页功能</li>
+<li>Add 新增图片灯箱效果 (FancyBox)</li>
+<li>Add 新增页面跳转效果 (pjax)</li>
+</ul>
+<h3 id="2019-12-04"><a href="#2019-12-04" class="headerlink" title="2019.12.04"></a>2019.12.04</h3><ul>
+<li>Add 配置项新增插件配置、CDN配置</li>
+<li>Fix 修复pjax与其他插件之间的冲突</li>
+</ul>
+<h3 id="2019-12-12"><a href="#2019-12-12" class="headerlink" title="2019.12.12"></a>2019.12.12</h3><ul>
+<li>Add 新增文章置顶功能</li>
+<li>Fix 修复文章列表摘录截断Bug</li>
+</ul>
+<h3 id="2019-12-13"><a href="#2019-12-13" class="headerlink" title="2019.12.13"></a>2019.12.13</h3><ul>
+<li>Add 新增代码高亮功能 (Highlight)</li>
+<li>Add 新增文章评论功能 (Gitalk)</li>
+<li>Add 新增文章标签功能</li>
+<li>Add 新增文章导航功能</li>
+<li>Fix 图片不可拖拽</li>
+<li>Fix 新增区块样式</li>
+</ul>
+<h3 id="2019-12-14"><a href="#2019-12-14" class="headerlink" title="2019.12.14"></a>2019.12.14</h3><ul>
+<li>Add 新增阅读量统计功能 (LeanCloud)</li>
+<li>Add 新增文章内容字数统计功能</li>
+</ul>
+<h3 id="2019-12-17"><a href="#2019-12-17" class="headerlink" title="2019.12.17"></a>2019.12.17</h3><ul>
+<li>Add 配置项新增菜单配置</li>
+<li>Add 新增用户代码配置</li>
+</ul>
+<h3 id="2019-12-23"><a href="#2019-12-23" class="headerlink" title="2019.12.23"></a>2019.12.23</h3><ul>
+<li>Add 头部新增水波模式</li>
+</ul>
+<h3 id="2020-01-26"><a href="#2020-01-26" class="headerlink" title="2020.01.26"></a>2020.01.26</h3><ul>
+<li>Add 新增归档页面</li>
+<li>Add 新增页面底部（社交、版权）</li>
+</ul>
+<h3 id="2020-01-27"><a href="#2020-01-27" class="headerlink" title="2020.01.27"></a>2020.01.27</h3><ul>
+<li>Add 新增捐赠功能</li>
+<li>Fix 页面底部设计按钮自定义选中颜色</li>
+<li>Fix 配置项CDN配置支持iconfont</li>
+</ul>
+<h3 id="2020-01-28"><a href="#2020-01-28" class="headerlink" title="2020.01.28"></a>2020.01.28</h3><ul>
+<li>Fix 新增查看评论按钮</li>
+</ul>
+<h3 id="2020-01-29"><a href="#2020-01-29" class="headerlink" title="2020.01.29"></a>2020.01.29</h3><ul>
+<li>Add 一言支持外部API引入，需配合“hexo-plug-motto”插件使用</li>
+<li>Fix 配置项支持颜色配置</li>
+</ul>
+<h3 id="2020-03-26"><a href="#2020-03-26" class="headerlink" title="2020.03.26"></a>2020.03.26</h3><ul>
+<li>Fix 菜单关闭按钮样式美化</li>
+</ul>
+<h3 id="2020-04-26"><a href="#2020-04-26" class="headerlink" title="2020.04.26"></a>2020.04.26</h3><ul>
+<li>Fix 侧边按钮优化</li>
+<li>Fix README.md 标准化</li>
+</ul>
+<h3 id="2020-04-29"><a href="#2020-04-29" class="headerlink" title="2020.04.29"></a>2020.04.29</h3><ul>
+<li>Add 新增标签云（tags）和标签（tag）</li>
+</ul>
+<h3 id="2020-04-20"><a href="#2020-04-20" class="headerlink" title="2020.04.20"></a>2020.04.20</h3><ul>
+<li>Add 新增分类（category）</li>
+</ul>
+<h3 id="2020-05-01"><a href="#2020-05-01" class="headerlink" title="2020.05.01"></a>2020.05.01</h3><ul>
+<li>Add 新增图片懒加载</li>
+<li>Fix 优化loading动画</li>
+</ul>
+<h3 id="2020-05-02"><a href="#2020-05-02" class="headerlink" title="2020.05.02"></a>2020.05.02</h3><ul>
+<li>Fix 修复Fancybox与lazyload之间的bug</li>
+</ul>
+<h3 id="2020-05-04"><a href="#2020-05-04" class="headerlink" title="2020.05.04"></a>2020.05.04</h3><ul>
+<li>Add 新增相册页面</li>
+<li>Add 部分页面新增头部标题</li>
+<li>Fix 合并部分样式</li>
+</ul>
+<h3 id="2020-05-05"><a href="#2020-05-05" class="headerlink" title="2020.05.05"></a>2020.05.05</h3><ul>
+<li>Add 新增主题使用文档</li>
+<li>Fix 修复独立页面标题</li>
+</ul>
+<h3 id="2020-05-07"><a href="#2020-05-07" class="headerlink" title="2020.05.07"></a>2020.05.07</h3><ul>
+<li>Add CSS 和 JS 埋点</li>
+<li>Fix lazyload 的一些兼容问题</li>
+</ul>
+<h3 id="2020-05-08"><a href="#2020-05-08" class="headerlink" title="2020.05.08"></a>2020.05.08</h3><ul>
+<li>Fix lazyload 与 相册 的一些兼容问题</li>
+</ul>
+<h3 id="2020-05-10"><a href="#2020-05-10" class="headerlink" title="2020.05.10"></a>2020.05.10</h3><ul>
+<li>Add 新增一些统计脚本</li>
+<li>Fix favicon</li>
+<li>Fix _config.yml 规范化</li>
+</ul>
+<h3 id="2020-05-15"><a href="#2020-05-15" class="headerlink" title="2020.05.15"></a>2020.05.15</h3><ul>
+<li>Fix fab 增加可选配置</li>
+</ul>
+<h3 id="2020-05-26"><a href="#2020-05-26" class="headerlink" title="2020.05.26"></a>2020.05.26</h3><ul>
+<li>Add valine 评论</li>
+<li>Add 畅言评论</li>
+<li>Fix 整合评论配置</li>
+</ul>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>主题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>zhaoo - 主题使用文档</title>
     <url>/2020/05/05/zhaoo%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/</url>
     <content><![CDATA[<p><code>zhaoo</code> 主题的一些使用指北。</p>
@@ -288,212 +497,158 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo-theme-zhaoo</title>
-    <url>/2020/01/30/zhaoo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>一款简约的 <code>Hexo</code> 主题。</p>
-<span id="more"></span>
-
-<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p><a href="https://github.com/izhaoo/hexo-theme-zhaoo">GitHub</a></p>
-<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><ul>
-<li><a href="https://www.izhaoo.com/">zhaoo’s Blog</a></li>
-<li><a href="https://codegorgeous.github.io/">CodeGorgeous</a></li>
-<li><a href="http://www.rt95.ink/">你好我是王日天@</a></li>
-<li><a href="https://www.bianxr.com/">卞卞不是便便</a></li>
-</ul>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
-<li><input checked="" disabled="" type="checkbox"> 简约 &amp; 响应式 &amp; 动效</li>
-<li><input checked="" disabled="" type="checkbox"> <code>highlight</code> 代码高亮</li>
-<li><input checked="" disabled="" type="checkbox"> <code>Gitalk</code> 评论</li>
-<li><input checked="" disabled="" type="checkbox"> <code>FancyBox</code> 图片灯箱</li>
-<li><input checked="" disabled="" type="checkbox"> <code>Pjax</code> 无刷新加载</li>
-<li><input checked="" disabled="" type="checkbox"> <code>lazyload</code> 图片懒加载</li>
-<li><input checked="" disabled="" type="checkbox"> <code>LeanCloud</code> 统计访问量</li>
-<li><input checked="" disabled="" type="checkbox"> <code>支付宝、微信</code> 打赏</li>
-<li><input checked="" disabled="" type="checkbox"> 相册页面，图片支持瀑布流加载（<code>justifiedGallery</code>）</li>
-<li><input checked="" disabled="" type="checkbox"> 格言，可配合插件 <code>hexo-plug-motto</code> 实现动态格言</li>
-<li><input checked="" disabled="" type="checkbox"> 定制 <code>主题风格</code>、<code>CDN</code>、<code>埋点脚本</code>、<code>社交链接</code>、<code>版权说明</code> 等</li>
-</ul>
-<h1 id="文章演示"><a href="#文章演示" class="headerlink" title="文章演示"></a>文章演示</h1><h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><p>一个<code>幽灵</code>，共产主义的<code>幽灵</code>，在欧洲游荡。为了对这个<code>幽灵</code>进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。</p>
-<p>使用 <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>ESC</kbd> 打开任务管理器</p>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p><img  src="/images/theme/post-image.jpg"   title="图片测试"><span class="image-caption">图片测试</span></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-meta">&#x27;use strict&#x27;</span>;<br><span class="hljs-keyword">var</span> pagination = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;hexo-pagination&#x27;</span>);<br><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">locals</span>)</span>&#123;<br>  <span class="hljs-keyword">var</span> config = <span class="hljs-built_in">this</span>.config;<br>  <span class="hljs-keyword">var</span> posts = locals.posts;<br>    posts.data = posts.data.sort(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>      <span class="hljs-keyword">if</span>(a.top &amp;&amp; b.top) &#123;<br>        <span class="hljs-keyword">if</span>(a.top == b.top) <span class="hljs-keyword">return</span> b.date - a.date;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.top - a.top;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a.top &amp;&amp; !b.top) &#123;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!a.top &amp;&amp; b.top) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.date - a.date;<br>    &#125;);<br>  <span class="hljs-keyword">var</span> paginationDir = config.pagination_dir || <span class="hljs-string">&#x27;page&#x27;</span>;<br>  <span class="hljs-keyword">return</span> pagination(<span class="hljs-string">&#x27;&#x27;</span>, posts, &#123;<br>    <span class="hljs-attr">perPage</span>: config.index_generator.per_page,<br>    <span class="hljs-attr">layout</span>: [<span class="hljs-string">&#x27;index&#x27;</span>, <span class="hljs-string">&#x27;archive&#x27;</span>],<br>    <span class="hljs-attr">format</span>: paginationDir + <span class="hljs-string">&#x27;/%d/&#x27;</span>,<br>    <span class="hljs-attr">data</span>: &#123;<br>      <span class="hljs-attr">__index</span>: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;);<br>&#125;;<br></code></pre></td></tr></table></figure>
-
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="/images/theme/post-image.jpg">普通链接</a></p>
-<p><a href="https://www.izhaoo.com/">https://www.izhaoo.com</a></p>
-<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><h5 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h5><p><em>斜体文本</em></p>
-<p><strong>粗体文本</strong></p>
-<p><em><strong>粗斜体文本</strong></em></p>
-<h5 id="线条"><a href="#线条" class="headerlink" title="线条"></a>线条</h5><hr>
-<p><del>删除线</del></p>
-<p><u>下划线</u></p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ul>
-<h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ol>
-<h5 id="嵌套列表"><a href="#嵌套列表" class="headerlink" title="嵌套列表"></a>嵌套列表</h5><ol>
-<li>第一项：<ul>
-<li>第一项嵌套的第一个元素</li>
-<li>第一项嵌套的第二个元素</li>
-</ul>
-</li>
-<li>第二项：<ul>
-<li>第二项嵌套的第一个元素</li>
-<li>第二项嵌套的第二个元素</li>
+    <title>markdown</title>
+    <url>/2022/01/18/Markdown%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="markdown-更简洁、更高效"><a href="#markdown-更简洁、更高效" class="headerlink" title="markdown - 更简洁、更高效"></a>markdown - 更简洁、更高效</h1><p>=================================================</p>
+<p>很多人只把markdown用于网络文章发表，这糟蹋了markdown。<br>markdown不止是HTML的简化版，更重要的是txt的升级版、word的轻量版、笔记的最佳载体。<br>作为一种简单的格式标记语言，不同于txt的无格式，不同于HTML的复杂标记，也不同于word的鼠标调整样式。markdown通过简单的几个字符键入，就可以快捷的定义文档的样式。<br>比如在行首敲一个“#”，就把这行定义为了1级标题<br>掌握markdown，你可以完全抛弃txt和笔记软件的编辑器，并且在大多数场景下替代掉复杂臃肿的word。享受简洁之美、享受效率提升。</p>
+<p>下面的示例列举了markdown语法</p>
+<h1 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h1><p>markdown的标题是行首以#号开头，空格分割的，不同级别的标题。如下：</p>
+<h1 id="标题1"><a href="#标题1" class="headerlink" title="标题1"></a>标题1</h1><h2 id="标题2"><a href="#标题2" class="headerlink" title="标题2"></a>标题2</h2><h3 id="标题3"><a href="#标题3" class="headerlink" title="标题3"></a>标题3</h3><h4 id="标题4"><a href="#标题4" class="headerlink" title="标题4"></a>标题4</h4><h5 id="标题5"><a href="#标题5" class="headerlink" title="标题5"></a>标题5</h5><h6 id="标题6"><a href="#标题6" class="headerlink" title="标题6"></a>标题6</h6><p>标题使用技巧：</p>
+<ol>
+<li>Emmet快速输入：敲h2+Tab即可生成二级标题【同HTML里的emmet写法，不止标题，HX里所有可对应tag的markdown语法均支持emmet写法】。仅行首生效</li>
+<li>智能双击：双击#号可选中整个标题段落</li>
+<li>智能回车：行尾回车或行中Ctrl+Enter强制换行后会自动在下一行补#。而连续2次回车后将自动补的#去掉。(体验同word)</li>
+<li>回车后再次按Tab可递进一层标题，再按Tab切换列表符</li>
+<li>在# 后回车，可上插一个空标题行【同word】，或任意位置按Ctrl+Shift+Enter也可以上插空标题行</li>
+<li>折叠：<ul>
+<li>点标题前的-号可折叠该标题段落，快捷键是Alt+-（展开折叠是Alt+=）</li>
+<li>多层折叠时折叠或展开子节点，快捷键是Alt+Shift+-或=</li>
+<li>全文全部折叠或展开，快捷键是Ctrl+Alt+Shift+-或=</li>
+<li>折叠其他区域，快捷键是Alt+Shift+o。这对长文档管理非常有用，可以专注于当前章节</li>
+<li>可以在菜单-跳转-折叠中随时找到这些功能</li>
 </ul>
 </li>
 </ol>
-<h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><blockquote>
-<p>区块引用</p>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><p>markdown的列表支持有序列表、无序列表以及特殊的任务列表。<br>同样也是在行前加一个特殊符号，并空格后再跟列表文字内容。</p>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>有序列表就是有顺序的列表，依靠行前的数字标记顺序。</p>
+<ol>
+<li>有序列表1 【设置或取消有序列表符的快捷键：Ctrl+Alt+1，可选中多行批量设置序号；支持多光标批量设置列表符，即按Ctrl+鼠标左键添加多光标】</li>
+<li>有序列表2 【列表后回车会自动补序号】</li>
+<li>有序列表3 【智能双击：双击前面的数字，可重新对数字排序，修正序号错误，并选中有序列表段落（左边的4是故意写错让你体验的）】</li>
+</ol>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>无序列表就是列表不排序，无序列表因书写随意而被更广泛的使用。<br>无序列表有3种前缀，HX里分别用于表示1级列表、2级列表、3级列表。</p>
+<ul>
+<li>无序列表1 【快捷键：Ctrl+Alt+-；智能双击：双击-号可选中整段无序列表；再次按Tab会更换二级列表符】</li>
+</ul>
+<ul>
+<li>无序列表2    <ul>
+<li>Emmet：li后敲Tab可生成*号列表符，行首生效</li>
+<li>快捷键：Ctrl+Alt+8【8即*对应的数字】，支持多光标批量设置列表符，即按Ctrl+鼠标左键添加多光标</li>
+<li>智能双击：双击*号可选中整段无序列表</li>
+<li>智能回车：行尾回车或行中Ctrl+Enter强制换行后会自动续列表；连续按回车会清除列表符；再次按Tab会更换列表符；在列表符后回车或行尾Shift+回车，上一行留出列表符</li>
+<li>*号常用于二级列表，列表符后继续Tab，可切换列表符</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>无序列表3 【快捷键：Ctrl+Alt+=；常用于三级列表；其他同上】</li>
+</ul>
+<h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><p>任务列表非常实用，管理待办、已办非常便利。<br>[ ] 任务列表-未完成任务 【快捷键：Ctrl+Alt+[】<br>[x] 任务列表-已完成任务 【快捷键：Ctrl+Alt+]】<br>    1. 智能双击：双击方括号内可切换勾选状态，把任务标记为完成或未完成；双击方括号右侧可选中任务列表段落<br>    2. 智能回车：回车后自动补任务列表前缀符号；连续按回车清除前缀符号；在列表符后回车或行尾Shift+回车，上一行留出列表符</p>
+<ul>
+<li><input disabled="" type="checkbox"> 如需发布到web渲染，需增加无序列表- 的前缀</li>
+</ul>
+<p>以上三种列表，均支持批量修改列表符，有如下方式建议依次学习尝试：</p>
+<ol>
+<li>选中多行，按快捷键Ctrl+Alt+“1”或“-”或“[”或“]”，批量设置列表符</li>
+<li>如果需要跳行设置有序或无序列表，通过Ctrl+鼠标左键点中目标多行（可不连续），产生多光标，然后按快捷键Ctrl+Alt+“1”或“-”或“[”或“]”，可跳行设置列表符，尤其是有序列表，数字也会跳行加1</li>
+<li>按Alt+鼠标选中行首那列（列选择），这样每行行首都有光标，然后再键入或删除列表符即可批量操作</li>
+<li>选中多行，按快捷键Ctrl+Shift+\（其实就是Ctrl+|），可以在每行行首添加一个光标</li>
+</ol>
+<h2 id="引用列表"><a href="#引用列表" class="headerlink" title="引用列表"></a>引用列表</h2><blockquote>
+<p>引用1<br>引用2<br>快捷键：Ctrl+Alt+Shift+.<br>智能双击：双击&gt;号可选中整段引用列表<br>智能回车：行尾回车或行中Ctrl+Enter强制换行后会自动续列表；连续按回车会清除列表符；在列表符后回车或行尾Shift+回车，上一行留出列表符</p>
 </blockquote>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
+<h1 id="文字样式语法"><a href="#文字样式语法" class="headerlink" title="文字样式语法"></a>文字样式语法</h1><p><strong>加粗</strong> 【快捷键：Ctrl+B，支持多光标；Emmet：b后敲Tab】<br><strong>加粗2</strong><br><em>倾斜_【Emmet：i后敲Tab；前后包围：选中文字按Ctrl+\是在选区两侧添加光标，可以继续输入_】<br><em>倾斜</em><br><del>删除线</del><br><code>单行代码</code><br>包围插入：先选中文字内容，然后按</em>*~`等符号，会自动在2侧加包围<br>智能双击：双击语法区前面的定义符号，选中包含定义符的整段文字<br>去包围：选中整段文字后，按Ctrl+Shift+]，可去除2侧包围符号</p>
+<p>引号括号虽然不属于markdown语法，但也支持相同的包围、选择、去包围操作。<br>引号括号智能双击选择时略特殊的是：双击引号括号内侧，选中引号括号里的内容(不含引号括号)；按下Alt+双击引号括号内侧，则选中包含符号的整段文字</p>
+<p>以下对2侧文本高效处理的手段</p>
+<ol>
+<li>选中文字按Ctrl+\是在选区两侧添加光标，可以继续输入~~，会在2侧同时输入</li>
+<li>向2侧扩大选择：【Win:Alt+Shit+→ 、Mac:Ctrl++Shit+→】；由2侧向内减少选择：【Win:Alt+Shit+← 、Mac:Ctrl++Shit+←】</li>
+</ol>
+<p><a href="http://dcloud.io/">链接文字</a></p>
+<ol>
+<li>Emmet：a后敲Tab</li>
+<li>打开链接：Alt+鼠标单击；如果是本地文件，可通过Shift+Alt+单击，在另一分栏打开文件</li>
+<li>智能粘贴：粘贴URL会自动变成超链接格式；粘贴本地文件进来也会自动创建引用链接</li>
+<li>智能双击：双击语法区开头，即[左侧，选中包含定义符的整段文字</li>
+</ol>
+<p><img  src="logo.jpg"  ><span class="image-caption">图片描述文字</span></p>
+<ol>
+<li>Emmet：img后敲Tab</li>
+<li>智能粘贴：粘贴剪切板里的图形时会自动保存为本md文档的附件；删除文档中的图片语法，保存md文档时会自动删除对应的图片附件；粘贴图片文件时自动变成链接引用格式；</li>
+<li>悬浮预览：鼠标移到图片语法上，本地图片会自动显示出来</li>
+<li>智能双击：双击语法区开头，即!左侧，选中包含定义符的整段文字</li>
+</ol>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
 <thead>
 <tr>
-<th>表头</th>
-<th>表头</th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>单元格</td>
-<td>单元格</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>单元格</td>
-<td>单元格</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中对齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-<tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-</tbody></table>
-<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><h4 id="四级"><a href="#四级" class="headerlink" title="四级"></a>四级</h4><h5 id="五级"><a href="#五级" class="headerlink" title="五级"></a>五级</h5><h6 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h6><h1 id="开发日志"><a href="#开发日志" class="headerlink" title="开发日志"></a>开发日志</h1><h3 id="2019-12-02"><a href="#2019-12-02" class="headerlink" title="2019.12.02"></a>2019.12.02</h3><ul>
-<li>Add 创建项目</li>
-<li>Add 完成部分功能</li>
+<ol>
+<li>Emmet：table3*3后敲Tab，表示生成3行3列的表格，行首生效</li>
+<li>md表格对齐是传统md的痛点，按下Ctrl+K可以自动整理表格格式（暂未兼容不同缩放模式和字体的情况）</li>
+<li>支持从excel、wps、word、number的表格中复制粘贴表格进来（不支持合并单元格和单元格换行）</li>
+</ol>
+<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><p>————- 【Emmet：hr后敲Tab】</p>
+<hr>
+<p>=============</p>
+<h1 id="代码区"><a href="#代码区" class="headerlink" title="代码区"></a>代码区</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-built_in">document</span><br></code></pre></td></tr></table></figure>
+<p>Emmet：code后敲Tab，行首生效<br>智能双击：双击语法区开头，即!左侧，选中包含定义符的整段文字<br>支持代码直接高亮着色，这应该是只有HBuilderX才有的功能。注意需要在代码区开头指定语言类型</p>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><!--注释--> 
+<p>快捷键：Ctrl+/<br>智能双击：双击注释首尾的定义符，选中整段注释</p>
+<h1 id="其他emmet快捷输入"><a href="#其他emmet快捷输入" class="headerlink" title="其他emmet快捷输入"></a>其他emmet快捷输入</h1><p>day后敲Tab，当前日期。注意day需在行首或前面有空格<br>time后敲Tab，当前时间。注意time需在行首或前面有空格</p>
+<h1 id="文档结构图"><a href="#文档结构图" class="headerlink" title="文档结构图"></a>文档结构图</h1><p>文章很长时，word里有文档结构图，HBuilderX也有。<br>菜单视图-文档结构图，快捷键Alt+W(mac是ctrl+W)，轻松管理长文档</p>
+<h1 id="运行、预览和打印PDF"><a href="#运行、预览和打印PDF" class="headerlink" title="运行、预览和打印PDF"></a>运行、预览和打印PDF</h1><p>对md文件点工具栏或菜单里的浏览器运行，可以使用外部浏览器预览此md文件，会自动渲染为HTML。<br>点右上角的预览【快捷键Alt+p】<br>在浏览器中点打印，选择打印到PDF，可将md输出为PDF格式。（注意在打印选项里去掉页眉页脚）</p>
+<h1 id="一键分享"><a href="#一键分享" class="headerlink" title="一键分享"></a>一键分享</h1><p>markdown拥有迷人的输入体验，但分享并不方便，尤其是缺少免费、稳定、高速的图床。<br><a href="https://unicloud.dcloud.net.cn/">uniCloud</a>提供了免费、稳定、高速的服务器和cdn。</p>
+<p>利用uniCloud的前端网页托管，将markdown稳定转成了HTML网页，并发布为在线的URL。您可以把URL发送给任何想要分享的人。<br>同时markdown里涉及的图片也会自动上传到前端网页托管里免费cdn中。</p>
+<p>更多见: <a href="https://ask.dcloud.net.cn/article/37573">MarkDown一键分享使用说明</a></p>
+<h1 id="其他常用但你可能不知道的快捷操作技巧"><a href="#其他常用但你可能不知道的快捷操作技巧" class="headerlink" title="其他常用但你可能不知道的快捷操作技巧"></a>其他常用但你可能不知道的快捷操作技巧</h1><ul>
+<li>Ctrl+鼠标左键添加多光标，然后敲字或粘贴，可批量处理。Ctrl+鼠标左键拖选，可选中多个选区。</li>
+<li>Ctrl+鼠标右键删除多光标</li>
+<li>不选内容按Ctrl+C或X可复制或剪切整行</li>
+<li>选中2个选区后，按Ctrl+Shift+X，可互换选区内容。如无选区，只是2个光标，则互换2行</li>
+<li>Ctrl+上下键可上下移动行</li>
+<li>Ctrl+Insert可重复插入当前行，如果有选中内容，可重复插入选中内容</li>
+<li>Ctrl+Shift+K可合并多行（是格式化Ctrl+K的反操作）</li>
+<li>删除<ul>
+<li>按Ctrl+D可删除选中行，支持多光标</li>
+<li>Shift+Del删除到行尾</li>
+<li>Shift+Backspace删除到行首</li>
 </ul>
-<h3 id="2019-12-03"><a href="#2019-12-03" class="headerlink" title="2019.12.03"></a>2019.12.03</h3><ul>
-<li>Add 新增基础分页功能</li>
-<li>Add 新增图片灯箱效果 (FancyBox)</li>
-<li>Add 新增页面跳转效果 (pjax)</li>
+</li>
+<li>选择<ul>
+<li>Ctrl+E选相同词(mac是Command+D)，连续按可选中多词进一步操作，比替换更方便</li>
+<li>Ctrl+L可连选多行，Ctrl+Shift+L也是选择行，但不选行首尾的空白字符</li>
+<li>Ctrl+=可逐级放大选区</li>
+<li>双击标题、列表符可选中相应段落</li>
+<li>双击英文引号、括号内侧，可选中内部内容</li>
+<li>双击缩进符，可选中同缩进段落</li>
+<li>双击连字符比如-或_，可选中相连的词，比如双击这里试试，uni-app</li>
 </ul>
-<h3 id="2019-12-04"><a href="#2019-12-04" class="headerlink" title="2019.12.04"></a>2019.12.04</h3><ul>
-<li>Add 配置项新增插件配置、CDN配置</li>
-<li>Fix 修复pjax与其他插件之间的冲突</li>
+</li>
+<li>查找<ul>
+<li>Ctrl+P查找文件</li>
+<li>Ctrl+Alt+F可在当前目录的所有文档中搜索指定关键字(mac是Command+Shift+f)</li>
+<li>选中文字按F3，查找下一个，Shift+F3找上一个</li>
 </ul>
-<h3 id="2019-12-12"><a href="#2019-12-12" class="headerlink" title="2019.12.12"></a>2019.12.12</h3><ul>
-<li>Add 新增文章置顶功能</li>
-<li>Fix 修复文章列表摘录截断Bug</li>
-</ul>
-<h3 id="2019-12-13"><a href="#2019-12-13" class="headerlink" title="2019.12.13"></a>2019.12.13</h3><ul>
-<li>Add 新增代码高亮功能 (Highlight)</li>
-<li>Add 新增文章评论功能 (Gitalk)</li>
-<li>Add 新增文章标签功能</li>
-<li>Add 新增文章导航功能</li>
-<li>Fix 图片不可拖拽</li>
-<li>Fix 新增区块样式</li>
-</ul>
-<h3 id="2019-12-14"><a href="#2019-12-14" class="headerlink" title="2019.12.14"></a>2019.12.14</h3><ul>
-<li>Add 新增阅读量统计功能 (LeanCloud)</li>
-<li>Add 新增文章内容字数统计功能</li>
-</ul>
-<h3 id="2019-12-17"><a href="#2019-12-17" class="headerlink" title="2019.12.17"></a>2019.12.17</h3><ul>
-<li>Add 配置项新增菜单配置</li>
-<li>Add 新增用户代码配置</li>
-</ul>
-<h3 id="2019-12-23"><a href="#2019-12-23" class="headerlink" title="2019.12.23"></a>2019.12.23</h3><ul>
-<li>Add 头部新增水波模式</li>
-</ul>
-<h3 id="2020-01-26"><a href="#2020-01-26" class="headerlink" title="2020.01.26"></a>2020.01.26</h3><ul>
-<li>Add 新增归档页面</li>
-<li>Add 新增页面底部（社交、版权）</li>
-</ul>
-<h3 id="2020-01-27"><a href="#2020-01-27" class="headerlink" title="2020.01.27"></a>2020.01.27</h3><ul>
-<li>Add 新增捐赠功能</li>
-<li>Fix 页面底部设计按钮自定义选中颜色</li>
-<li>Fix 配置项CDN配置支持iconfont</li>
-</ul>
-<h3 id="2020-01-28"><a href="#2020-01-28" class="headerlink" title="2020.01.28"></a>2020.01.28</h3><ul>
-<li>Fix 新增查看评论按钮</li>
-</ul>
-<h3 id="2020-01-29"><a href="#2020-01-29" class="headerlink" title="2020.01.29"></a>2020.01.29</h3><ul>
-<li>Add 一言支持外部API引入，需配合“hexo-plug-motto”插件使用</li>
-<li>Fix 配置项支持颜色配置</li>
-</ul>
-<h3 id="2020-03-26"><a href="#2020-03-26" class="headerlink" title="2020.03.26"></a>2020.03.26</h3><ul>
-<li>Fix 菜单关闭按钮样式美化</li>
-</ul>
-<h3 id="2020-04-26"><a href="#2020-04-26" class="headerlink" title="2020.04.26"></a>2020.04.26</h3><ul>
-<li>Fix 侧边按钮优化</li>
-<li>Fix README.md 标准化</li>
-</ul>
-<h3 id="2020-04-29"><a href="#2020-04-29" class="headerlink" title="2020.04.29"></a>2020.04.29</h3><ul>
-<li>Add 新增标签云（tags）和标签（tag）</li>
-</ul>
-<h3 id="2020-04-20"><a href="#2020-04-20" class="headerlink" title="2020.04.20"></a>2020.04.20</h3><ul>
-<li>Add 新增分类（category）</li>
-</ul>
-<h3 id="2020-05-01"><a href="#2020-05-01" class="headerlink" title="2020.05.01"></a>2020.05.01</h3><ul>
-<li>Add 新增图片懒加载</li>
-<li>Fix 优化loading动画</li>
-</ul>
-<h3 id="2020-05-02"><a href="#2020-05-02" class="headerlink" title="2020.05.02"></a>2020.05.02</h3><ul>
-<li>Fix 修复Fancybox与lazyload之间的bug</li>
-</ul>
-<h3 id="2020-05-04"><a href="#2020-05-04" class="headerlink" title="2020.05.04"></a>2020.05.04</h3><ul>
-<li>Add 新增相册页面</li>
-<li>Add 部分页面新增头部标题</li>
-<li>Fix 合并部分样式</li>
-</ul>
-<h3 id="2020-05-05"><a href="#2020-05-05" class="headerlink" title="2020.05.05"></a>2020.05.05</h3><ul>
-<li>Add 新增主题使用文档</li>
-<li>Fix 修复独立页面标题</li>
-</ul>
-<h3 id="2020-05-07"><a href="#2020-05-07" class="headerlink" title="2020.05.07"></a>2020.05.07</h3><ul>
-<li>Add CSS 和 JS 埋点</li>
-<li>Fix lazyload 的一些兼容问题</li>
-</ul>
-<h3 id="2020-05-08"><a href="#2020-05-08" class="headerlink" title="2020.05.08"></a>2020.05.08</h3><ul>
-<li>Fix lazyload 与 相册 的一些兼容问题</li>
-</ul>
-<h3 id="2020-05-10"><a href="#2020-05-10" class="headerlink" title="2020.05.10"></a>2020.05.10</h3><ul>
-<li>Add 新增一些统计脚本</li>
-<li>Fix favicon</li>
-<li>Fix _config.yml 规范化</li>
-</ul>
-<h3 id="2020-05-15"><a href="#2020-05-15" class="headerlink" title="2020.05.15"></a>2020.05.15</h3><ul>
-<li>Fix fab 增加可选配置</li>
-</ul>
-<h3 id="2020-05-26"><a href="#2020-05-26" class="headerlink" title="2020.05.26"></a>2020.05.26</h3><ul>
-<li>Add valine 评论</li>
-<li>Add 畅言评论</li>
-<li>Fix 整合评论配置</li>
+</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>主题</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
 </search>
