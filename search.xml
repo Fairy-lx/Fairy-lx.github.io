@@ -1,6 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo-theme-zhaoo</title>
+    <url>/2020/01/30/zhaoo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>一款简约的 <code>Hexo</code> 主题。</p>
+<span id="more"></span>
+
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p><a href="https://github.com/izhaoo/hexo-theme-zhaoo">GitHub</a></p>
+<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><ul>
+<li><a href="https://www.izhaoo.com/">zhaoo’s Blog</a></li>
+<li><a href="https://codegorgeous.github.io/">CodeGorgeous</a></li>
+<li><a href="http://www.rt95.ink/">你好我是王日天@</a></li>
+<li><a href="https://www.bianxr.com/">卞卞不是便便</a></li>
+</ul>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> 简约 &amp; 响应式 &amp; 动效</li>
+<li><input checked="" disabled="" type="checkbox"> <code>highlight</code> 代码高亮</li>
+<li><input checked="" disabled="" type="checkbox"> <code>Gitalk</code> 评论</li>
+<li><input checked="" disabled="" type="checkbox"> <code>FancyBox</code> 图片灯箱</li>
+<li><input checked="" disabled="" type="checkbox"> <code>Pjax</code> 无刷新加载</li>
+<li><input checked="" disabled="" type="checkbox"> <code>lazyload</code> 图片懒加载</li>
+<li><input checked="" disabled="" type="checkbox"> <code>LeanCloud</code> 统计访问量</li>
+<li><input checked="" disabled="" type="checkbox"> <code>支付宝、微信</code> 打赏</li>
+<li><input checked="" disabled="" type="checkbox"> 相册页面，图片支持瀑布流加载（<code>justifiedGallery</code>）</li>
+<li><input checked="" disabled="" type="checkbox"> 格言，可配合插件 <code>hexo-plug-motto</code> 实现动态格言</li>
+<li><input checked="" disabled="" type="checkbox"> 定制 <code>主题风格</code>、<code>CDN</code>、<code>埋点脚本</code>、<code>社交链接</code>、<code>版权说明</code> 等</li>
+</ul>
+<h1 id="文章演示"><a href="#文章演示" class="headerlink" title="文章演示"></a>文章演示</h1><h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><p>一个<code>幽灵</code>，共产主义的<code>幽灵</code>，在欧洲游荡。为了对这个<code>幽灵</code>进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。</p>
+<p>使用 <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>ESC</kbd> 打开任务管理器</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p><img  src="/images/theme/post-image.jpg"   title="图片测试"><span class="image-caption">图片测试</span></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-meta">&#x27;use strict&#x27;</span>;<br><span class="hljs-keyword">var</span> pagination = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;hexo-pagination&#x27;</span>);<br><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">locals</span>)</span>&#123;<br>  <span class="hljs-keyword">var</span> config = <span class="hljs-built_in">this</span>.config;<br>  <span class="hljs-keyword">var</span> posts = locals.posts;<br>    posts.data = posts.data.sort(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>      <span class="hljs-keyword">if</span>(a.top &amp;&amp; b.top) &#123;<br>        <span class="hljs-keyword">if</span>(a.top == b.top) <span class="hljs-keyword">return</span> b.date - a.date;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.top - a.top;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a.top &amp;&amp; !b.top) &#123;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!a.top &amp;&amp; b.top) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.date - a.date;<br>    &#125;);<br>  <span class="hljs-keyword">var</span> paginationDir = config.pagination_dir || <span class="hljs-string">&#x27;page&#x27;</span>;<br>  <span class="hljs-keyword">return</span> pagination(<span class="hljs-string">&#x27;&#x27;</span>, posts, &#123;<br>    <span class="hljs-attr">perPage</span>: config.index_generator.per_page,<br>    <span class="hljs-attr">layout</span>: [<span class="hljs-string">&#x27;index&#x27;</span>, <span class="hljs-string">&#x27;archive&#x27;</span>],<br>    <span class="hljs-attr">format</span>: paginationDir + <span class="hljs-string">&#x27;/%d/&#x27;</span>,<br>    <span class="hljs-attr">data</span>: &#123;<br>      <span class="hljs-attr">__index</span>: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;);<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="/images/theme/post-image.jpg">普通链接</a></p>
+<p><a href="https://www.izhaoo.com/">https://www.izhaoo.com</a></p>
+<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><h5 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h5><p><em>斜体文本</em></p>
+<p><strong>粗体文本</strong></p>
+<p><em><strong>粗斜体文本</strong></em></p>
+<h5 id="线条"><a href="#线条" class="headerlink" title="线条"></a>线条</h5><hr>
+<p><del>删除线</del></p>
+<p><u>下划线</u></p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h5 id="嵌套列表"><a href="#嵌套列表" class="headerlink" title="嵌套列表"></a>嵌套列表</h5><ol>
+<li>第一项：<ul>
+<li>第一项嵌套的第一个元素</li>
+<li>第一项嵌套的第二个元素</li>
+</ul>
+</li>
+<li>第二项：<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
+</ul>
+</li>
+</ol>
+<h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><blockquote>
+<p>区块引用</p>
+</blockquote>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+</tbody></table>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><h4 id="四级"><a href="#四级" class="headerlink" title="四级"></a>四级</h4><h5 id="五级"><a href="#五级" class="headerlink" title="五级"></a>五级</h5><h6 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h6><h1 id="开发日志"><a href="#开发日志" class="headerlink" title="开发日志"></a>开发日志</h1><h3 id="2019-12-02"><a href="#2019-12-02" class="headerlink" title="2019.12.02"></a>2019.12.02</h3><ul>
+<li>Add 创建项目</li>
+<li>Add 完成部分功能</li>
+</ul>
+<h3 id="2019-12-03"><a href="#2019-12-03" class="headerlink" title="2019.12.03"></a>2019.12.03</h3><ul>
+<li>Add 新增基础分页功能</li>
+<li>Add 新增图片灯箱效果 (FancyBox)</li>
+<li>Add 新增页面跳转效果 (pjax)</li>
+</ul>
+<h3 id="2019-12-04"><a href="#2019-12-04" class="headerlink" title="2019.12.04"></a>2019.12.04</h3><ul>
+<li>Add 配置项新增插件配置、CDN配置</li>
+<li>Fix 修复pjax与其他插件之间的冲突</li>
+</ul>
+<h3 id="2019-12-12"><a href="#2019-12-12" class="headerlink" title="2019.12.12"></a>2019.12.12</h3><ul>
+<li>Add 新增文章置顶功能</li>
+<li>Fix 修复文章列表摘录截断Bug</li>
+</ul>
+<h3 id="2019-12-13"><a href="#2019-12-13" class="headerlink" title="2019.12.13"></a>2019.12.13</h3><ul>
+<li>Add 新增代码高亮功能 (Highlight)</li>
+<li>Add 新增文章评论功能 (Gitalk)</li>
+<li>Add 新增文章标签功能</li>
+<li>Add 新增文章导航功能</li>
+<li>Fix 图片不可拖拽</li>
+<li>Fix 新增区块样式</li>
+</ul>
+<h3 id="2019-12-14"><a href="#2019-12-14" class="headerlink" title="2019.12.14"></a>2019.12.14</h3><ul>
+<li>Add 新增阅读量统计功能 (LeanCloud)</li>
+<li>Add 新增文章内容字数统计功能</li>
+</ul>
+<h3 id="2019-12-17"><a href="#2019-12-17" class="headerlink" title="2019.12.17"></a>2019.12.17</h3><ul>
+<li>Add 配置项新增菜单配置</li>
+<li>Add 新增用户代码配置</li>
+</ul>
+<h3 id="2019-12-23"><a href="#2019-12-23" class="headerlink" title="2019.12.23"></a>2019.12.23</h3><ul>
+<li>Add 头部新增水波模式</li>
+</ul>
+<h3 id="2020-01-26"><a href="#2020-01-26" class="headerlink" title="2020.01.26"></a>2020.01.26</h3><ul>
+<li>Add 新增归档页面</li>
+<li>Add 新增页面底部（社交、版权）</li>
+</ul>
+<h3 id="2020-01-27"><a href="#2020-01-27" class="headerlink" title="2020.01.27"></a>2020.01.27</h3><ul>
+<li>Add 新增捐赠功能</li>
+<li>Fix 页面底部设计按钮自定义选中颜色</li>
+<li>Fix 配置项CDN配置支持iconfont</li>
+</ul>
+<h3 id="2020-01-28"><a href="#2020-01-28" class="headerlink" title="2020.01.28"></a>2020.01.28</h3><ul>
+<li>Fix 新增查看评论按钮</li>
+</ul>
+<h3 id="2020-01-29"><a href="#2020-01-29" class="headerlink" title="2020.01.29"></a>2020.01.29</h3><ul>
+<li>Add 一言支持外部API引入，需配合“hexo-plug-motto”插件使用</li>
+<li>Fix 配置项支持颜色配置</li>
+</ul>
+<h3 id="2020-03-26"><a href="#2020-03-26" class="headerlink" title="2020.03.26"></a>2020.03.26</h3><ul>
+<li>Fix 菜单关闭按钮样式美化</li>
+</ul>
+<h3 id="2020-04-26"><a href="#2020-04-26" class="headerlink" title="2020.04.26"></a>2020.04.26</h3><ul>
+<li>Fix 侧边按钮优化</li>
+<li>Fix README.md 标准化</li>
+</ul>
+<h3 id="2020-04-29"><a href="#2020-04-29" class="headerlink" title="2020.04.29"></a>2020.04.29</h3><ul>
+<li>Add 新增标签云（tags）和标签（tag）</li>
+</ul>
+<h3 id="2020-04-20"><a href="#2020-04-20" class="headerlink" title="2020.04.20"></a>2020.04.20</h3><ul>
+<li>Add 新增分类（category）</li>
+</ul>
+<h3 id="2020-05-01"><a href="#2020-05-01" class="headerlink" title="2020.05.01"></a>2020.05.01</h3><ul>
+<li>Add 新增图片懒加载</li>
+<li>Fix 优化loading动画</li>
+</ul>
+<h3 id="2020-05-02"><a href="#2020-05-02" class="headerlink" title="2020.05.02"></a>2020.05.02</h3><ul>
+<li>Fix 修复Fancybox与lazyload之间的bug</li>
+</ul>
+<h3 id="2020-05-04"><a href="#2020-05-04" class="headerlink" title="2020.05.04"></a>2020.05.04</h3><ul>
+<li>Add 新增相册页面</li>
+<li>Add 部分页面新增头部标题</li>
+<li>Fix 合并部分样式</li>
+</ul>
+<h3 id="2020-05-05"><a href="#2020-05-05" class="headerlink" title="2020.05.05"></a>2020.05.05</h3><ul>
+<li>Add 新增主题使用文档</li>
+<li>Fix 修复独立页面标题</li>
+</ul>
+<h3 id="2020-05-07"><a href="#2020-05-07" class="headerlink" title="2020.05.07"></a>2020.05.07</h3><ul>
+<li>Add CSS 和 JS 埋点</li>
+<li>Fix lazyload 的一些兼容问题</li>
+</ul>
+<h3 id="2020-05-08"><a href="#2020-05-08" class="headerlink" title="2020.05.08"></a>2020.05.08</h3><ul>
+<li>Fix lazyload 与 相册 的一些兼容问题</li>
+</ul>
+<h3 id="2020-05-10"><a href="#2020-05-10" class="headerlink" title="2020.05.10"></a>2020.05.10</h3><ul>
+<li>Add 新增一些统计脚本</li>
+<li>Fix favicon</li>
+<li>Fix _config.yml 规范化</li>
+</ul>
+<h3 id="2020-05-15"><a href="#2020-05-15" class="headerlink" title="2020.05.15"></a>2020.05.15</h3><ul>
+<li>Fix fab 增加可选配置</li>
+</ul>
+<h3 id="2020-05-26"><a href="#2020-05-26" class="headerlink" title="2020.05.26"></a>2020.05.26</h3><ul>
+<li>Add valine 评论</li>
+<li>Add 畅言评论</li>
+<li>Fix 整合评论配置</li>
+</ul>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>主题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>zhaoo - 主题使用文档</title>
     <url>/2020/05/05/zhaoo%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/</url>
     <content><![CDATA[<p><code>zhaoo</code> 主题的一些使用指北。</p>
@@ -217,215 +426,6 @@
 
 <h5 id="评论系统（Gitalk）"><a href="#评论系统（Gitalk）" class="headerlink" title="评论系统（Gitalk）"></a>评论系统（Gitalk）</h5><h5 id="文章统计（LeanCloud）"><a href="#文章统计（LeanCloud）" class="headerlink" title="文章统计（LeanCloud）"></a>文章统计（LeanCloud）</h5><h5 id="脚本埋点"><a href="#脚本埋点" class="headerlink" title="脚本埋点"></a>脚本埋点</h5><p>有时候我们需要埋入一些第三方脚本，例如 <code>百度统计</code>、<code>百度SEO</code> 等。主题在 <strong>头部</strong> 和 <strong>尾部</strong> 分别开放了埋点入口，只需在主题配置文件中填入第三方脚本即可：</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">custom:</span><br>  <span class="hljs-comment">#头部埋点</span><br>  <span class="hljs-attr">head:</span><br>  <span class="hljs-comment">#尾部埋点</span><br>  <span class="hljs-attr">foot:</span> <span class="hljs-string">&lt;script&gt;var</span> <span class="hljs-string">_hmt=_hmt||[];(function()&#123;var</span> <span class="hljs-string">hm=document.createElement(&quot;script&quot;);hm.src=&quot;https://hm.baidu.com/hm.js?4c204d8bc027a0455b5fc642ac334ca8&quot;;var</span> <span class="hljs-string">s=document.getElementsByTagName(&quot;script&quot;)[0];s.parentNode.insertBefore(hm,s)&#125;)();&lt;/script&gt;</span><br>  <span class="hljs-attr">css:</span><br>  <span class="hljs-attr">js:</span><br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>主题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo-theme-zhaoo</title>
-    <url>/2020/01/30/zhaoo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>一款简约的 <code>Hexo</code> 主题。</p>
-<span id="more"></span>
-
-<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p><a href="https://github.com/izhaoo/hexo-theme-zhaoo">GitHub</a></p>
-<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><ul>
-<li><a href="https://www.izhaoo.com/">zhaoo’s Blog</a></li>
-<li><a href="https://codegorgeous.github.io/">CodeGorgeous</a></li>
-<li><a href="http://www.rt95.ink/">你好我是王日天@</a></li>
-<li><a href="https://www.bianxr.com/">卞卞不是便便</a></li>
-</ul>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
-<li><input checked="" disabled="" type="checkbox"> 简约 &amp; 响应式 &amp; 动效</li>
-<li><input checked="" disabled="" type="checkbox"> <code>highlight</code> 代码高亮</li>
-<li><input checked="" disabled="" type="checkbox"> <code>Gitalk</code> 评论</li>
-<li><input checked="" disabled="" type="checkbox"> <code>FancyBox</code> 图片灯箱</li>
-<li><input checked="" disabled="" type="checkbox"> <code>Pjax</code> 无刷新加载</li>
-<li><input checked="" disabled="" type="checkbox"> <code>lazyload</code> 图片懒加载</li>
-<li><input checked="" disabled="" type="checkbox"> <code>LeanCloud</code> 统计访问量</li>
-<li><input checked="" disabled="" type="checkbox"> <code>支付宝、微信</code> 打赏</li>
-<li><input checked="" disabled="" type="checkbox"> 相册页面，图片支持瀑布流加载（<code>justifiedGallery</code>）</li>
-<li><input checked="" disabled="" type="checkbox"> 格言，可配合插件 <code>hexo-plug-motto</code> 实现动态格言</li>
-<li><input checked="" disabled="" type="checkbox"> 定制 <code>主题风格</code>、<code>CDN</code>、<code>埋点脚本</code>、<code>社交链接</code>、<code>版权说明</code> 等</li>
-</ul>
-<h1 id="文章演示"><a href="#文章演示" class="headerlink" title="文章演示"></a>文章演示</h1><h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><p>一个<code>幽灵</code>，共产主义的<code>幽灵</code>，在欧洲游荡。为了对这个<code>幽灵</code>进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。</p>
-<p>使用 <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>ESC</kbd> 打开任务管理器</p>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p><img  src="/images/theme/post-image.jpg"   title="图片测试"><span class="image-caption">图片测试</span></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-meta">&#x27;use strict&#x27;</span>;<br><span class="hljs-keyword">var</span> pagination = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;hexo-pagination&#x27;</span>);<br><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">locals</span>)</span>&#123;<br>  <span class="hljs-keyword">var</span> config = <span class="hljs-built_in">this</span>.config;<br>  <span class="hljs-keyword">var</span> posts = locals.posts;<br>    posts.data = posts.data.sort(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>      <span class="hljs-keyword">if</span>(a.top &amp;&amp; b.top) &#123;<br>        <span class="hljs-keyword">if</span>(a.top == b.top) <span class="hljs-keyword">return</span> b.date - a.date;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.top - a.top;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a.top &amp;&amp; !b.top) &#123;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!a.top &amp;&amp; b.top) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> b.date - a.date;<br>    &#125;);<br>  <span class="hljs-keyword">var</span> paginationDir = config.pagination_dir || <span class="hljs-string">&#x27;page&#x27;</span>;<br>  <span class="hljs-keyword">return</span> pagination(<span class="hljs-string">&#x27;&#x27;</span>, posts, &#123;<br>    <span class="hljs-attr">perPage</span>: config.index_generator.per_page,<br>    <span class="hljs-attr">layout</span>: [<span class="hljs-string">&#x27;index&#x27;</span>, <span class="hljs-string">&#x27;archive&#x27;</span>],<br>    <span class="hljs-attr">format</span>: paginationDir + <span class="hljs-string">&#x27;/%d/&#x27;</span>,<br>    <span class="hljs-attr">data</span>: &#123;<br>      <span class="hljs-attr">__index</span>: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;);<br>&#125;;<br></code></pre></td></tr></table></figure>
-
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="/images/theme/post-image.jpg">普通链接</a></p>
-<p><a href="https://www.izhaoo.com/">https://www.izhaoo.com</a></p>
-<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><h5 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h5><p><em>斜体文本</em></p>
-<p><strong>粗体文本</strong></p>
-<p><em><strong>粗斜体文本</strong></em></p>
-<h5 id="线条"><a href="#线条" class="headerlink" title="线条"></a>线条</h5><hr>
-<p><del>删除线</del></p>
-<p><u>下划线</u></p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ul>
-<h5 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h5><ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ol>
-<h5 id="嵌套列表"><a href="#嵌套列表" class="headerlink" title="嵌套列表"></a>嵌套列表</h5><ol>
-<li>第一项：<ul>
-<li>第一项嵌套的第一个元素</li>
-<li>第一项嵌套的第二个元素</li>
-</ul>
-</li>
-<li>第二项：<ul>
-<li>第二项嵌套的第一个元素</li>
-<li>第二项嵌套的第二个元素</li>
-</ul>
-</li>
-</ol>
-<h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><blockquote>
-<p>区块引用</p>
-</blockquote>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
-<thead>
-<tr>
-<th>表头</th>
-<th>表头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-<tr>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中对齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-<tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-</tbody></table>
-<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><h4 id="四级"><a href="#四级" class="headerlink" title="四级"></a>四级</h4><h5 id="五级"><a href="#五级" class="headerlink" title="五级"></a>五级</h5><h6 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h6><h1 id="开发日志"><a href="#开发日志" class="headerlink" title="开发日志"></a>开发日志</h1><h3 id="2019-12-02"><a href="#2019-12-02" class="headerlink" title="2019.12.02"></a>2019.12.02</h3><ul>
-<li>Add 创建项目</li>
-<li>Add 完成部分功能</li>
-</ul>
-<h3 id="2019-12-03"><a href="#2019-12-03" class="headerlink" title="2019.12.03"></a>2019.12.03</h3><ul>
-<li>Add 新增基础分页功能</li>
-<li>Add 新增图片灯箱效果 (FancyBox)</li>
-<li>Add 新增页面跳转效果 (pjax)</li>
-</ul>
-<h3 id="2019-12-04"><a href="#2019-12-04" class="headerlink" title="2019.12.04"></a>2019.12.04</h3><ul>
-<li>Add 配置项新增插件配置、CDN配置</li>
-<li>Fix 修复pjax与其他插件之间的冲突</li>
-</ul>
-<h3 id="2019-12-12"><a href="#2019-12-12" class="headerlink" title="2019.12.12"></a>2019.12.12</h3><ul>
-<li>Add 新增文章置顶功能</li>
-<li>Fix 修复文章列表摘录截断Bug</li>
-</ul>
-<h3 id="2019-12-13"><a href="#2019-12-13" class="headerlink" title="2019.12.13"></a>2019.12.13</h3><ul>
-<li>Add 新增代码高亮功能 (Highlight)</li>
-<li>Add 新增文章评论功能 (Gitalk)</li>
-<li>Add 新增文章标签功能</li>
-<li>Add 新增文章导航功能</li>
-<li>Fix 图片不可拖拽</li>
-<li>Fix 新增区块样式</li>
-</ul>
-<h3 id="2019-12-14"><a href="#2019-12-14" class="headerlink" title="2019.12.14"></a>2019.12.14</h3><ul>
-<li>Add 新增阅读量统计功能 (LeanCloud)</li>
-<li>Add 新增文章内容字数统计功能</li>
-</ul>
-<h3 id="2019-12-17"><a href="#2019-12-17" class="headerlink" title="2019.12.17"></a>2019.12.17</h3><ul>
-<li>Add 配置项新增菜单配置</li>
-<li>Add 新增用户代码配置</li>
-</ul>
-<h3 id="2019-12-23"><a href="#2019-12-23" class="headerlink" title="2019.12.23"></a>2019.12.23</h3><ul>
-<li>Add 头部新增水波模式</li>
-</ul>
-<h3 id="2020-01-26"><a href="#2020-01-26" class="headerlink" title="2020.01.26"></a>2020.01.26</h3><ul>
-<li>Add 新增归档页面</li>
-<li>Add 新增页面底部（社交、版权）</li>
-</ul>
-<h3 id="2020-01-27"><a href="#2020-01-27" class="headerlink" title="2020.01.27"></a>2020.01.27</h3><ul>
-<li>Add 新增捐赠功能</li>
-<li>Fix 页面底部设计按钮自定义选中颜色</li>
-<li>Fix 配置项CDN配置支持iconfont</li>
-</ul>
-<h3 id="2020-01-28"><a href="#2020-01-28" class="headerlink" title="2020.01.28"></a>2020.01.28</h3><ul>
-<li>Fix 新增查看评论按钮</li>
-</ul>
-<h3 id="2020-01-29"><a href="#2020-01-29" class="headerlink" title="2020.01.29"></a>2020.01.29</h3><ul>
-<li>Add 一言支持外部API引入，需配合“hexo-plug-motto”插件使用</li>
-<li>Fix 配置项支持颜色配置</li>
-</ul>
-<h3 id="2020-03-26"><a href="#2020-03-26" class="headerlink" title="2020.03.26"></a>2020.03.26</h3><ul>
-<li>Fix 菜单关闭按钮样式美化</li>
-</ul>
-<h3 id="2020-04-26"><a href="#2020-04-26" class="headerlink" title="2020.04.26"></a>2020.04.26</h3><ul>
-<li>Fix 侧边按钮优化</li>
-<li>Fix README.md 标准化</li>
-</ul>
-<h3 id="2020-04-29"><a href="#2020-04-29" class="headerlink" title="2020.04.29"></a>2020.04.29</h3><ul>
-<li>Add 新增标签云（tags）和标签（tag）</li>
-</ul>
-<h3 id="2020-04-20"><a href="#2020-04-20" class="headerlink" title="2020.04.20"></a>2020.04.20</h3><ul>
-<li>Add 新增分类（category）</li>
-</ul>
-<h3 id="2020-05-01"><a href="#2020-05-01" class="headerlink" title="2020.05.01"></a>2020.05.01</h3><ul>
-<li>Add 新增图片懒加载</li>
-<li>Fix 优化loading动画</li>
-</ul>
-<h3 id="2020-05-02"><a href="#2020-05-02" class="headerlink" title="2020.05.02"></a>2020.05.02</h3><ul>
-<li>Fix 修复Fancybox与lazyload之间的bug</li>
-</ul>
-<h3 id="2020-05-04"><a href="#2020-05-04" class="headerlink" title="2020.05.04"></a>2020.05.04</h3><ul>
-<li>Add 新增相册页面</li>
-<li>Add 部分页面新增头部标题</li>
-<li>Fix 合并部分样式</li>
-</ul>
-<h3 id="2020-05-05"><a href="#2020-05-05" class="headerlink" title="2020.05.05"></a>2020.05.05</h3><ul>
-<li>Add 新增主题使用文档</li>
-<li>Fix 修复独立页面标题</li>
-</ul>
-<h3 id="2020-05-07"><a href="#2020-05-07" class="headerlink" title="2020.05.07"></a>2020.05.07</h3><ul>
-<li>Add CSS 和 JS 埋点</li>
-<li>Fix lazyload 的一些兼容问题</li>
-</ul>
-<h3 id="2020-05-08"><a href="#2020-05-08" class="headerlink" title="2020.05.08"></a>2020.05.08</h3><ul>
-<li>Fix lazyload 与 相册 的一些兼容问题</li>
-</ul>
-<h3 id="2020-05-10"><a href="#2020-05-10" class="headerlink" title="2020.05.10"></a>2020.05.10</h3><ul>
-<li>Add 新增一些统计脚本</li>
-<li>Fix favicon</li>
-<li>Fix _config.yml 规范化</li>
-</ul>
-<h3 id="2020-05-15"><a href="#2020-05-15" class="headerlink" title="2020.05.15"></a>2020.05.15</h3><ul>
-<li>Fix fab 增加可选配置</li>
-</ul>
-<h3 id="2020-05-26"><a href="#2020-05-26" class="headerlink" title="2020.05.26"></a>2020.05.26</h3><ul>
-<li>Add valine 评论</li>
-<li>Add 畅言评论</li>
-<li>Fix 整合评论配置</li>
-</ul>
-]]></content>
       <categories>
         <category>项目</category>
       </categories>
